@@ -26,7 +26,7 @@ with app.app_context():
 @app.route('/livros', methods=['GET'])
 def listar_livros():
     livros = Livro.query.all()
-    return jsonify([{'id': l.id, 'titulo': l.titulo, 'autor': l.autor} for l in livros])
+    return jsonify([{'id': l.id, 'titulo': l.titulo, 'autor': l.autor, 'ano': l.ano} for l in livros])
 
 # Rota para adicionar um livro
 @app.route('/livros', methods=['POST'])
